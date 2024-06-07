@@ -10,7 +10,7 @@ jobs:
       # This step runs nifectl deploy.
       - uses: nifetency/nife-actions@2.4
         env:
-          NIFE_ACCESS_TOKEN: ${{ secrets.NIFE_ACCESS_TOKEN }}
+          NIFE_ACCESS_TOKEN:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55TmFtZSI6InBsYXRpbnVtcGxhbm5pZmV5dCIsImN1c3RvbWVyU3RyaXBlSWQiOiJjdXNfTXIxTzB3aWtVT0Y2MDciLCJlbWFpbCI6InBsYXRpbnVtcGxhbm5pZmVAeW9wbWFpbC5jb20iLCJleHAiOjE3MTc3NjE2NjksImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6Ikpvc2VwaCIsInByb2R1Y3RJZCI6InByb2RfTWpYVzVaQ1NtQmNrS0QiLCJyb2xlSWQiOjF9.APT-8Ca3RtYmlshsf1-Uc3DZ63EATXDBEgd_LP2kgaY
         with:
           args: "deploy --remote-only"
 
