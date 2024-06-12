@@ -1,5 +1,5 @@
 # Use the official Node.js 18 image
-FROM node:18
+FROM node:latest
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY ../package*.json ./
 
 
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the application code
 COPY . .
@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the application
-CMD ["npm", "start"]
+CMD ["yarn","run","start"]
