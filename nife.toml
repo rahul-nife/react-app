@@ -29,6 +29,7 @@ kill_timeout = 5
   [services.limits]
     cpu = "1"
     memory = "256"
+    
 
   [[services.ports]]
     handlers = ["http"]
