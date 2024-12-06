@@ -1,18 +1,15 @@
 name: Deploy to Nife
+
 on:
-push:
+  push:
+
 jobs:
-  sonarqube:
-   name: SonarQube Analysis
+ scan:
+   name: Scan GitHub Secrets
    runs-on: ubuntu-latest
    steps:
      - name: Checkout code
        uses: actions/checkout@v4
-     - name: Run SonarQube Scan
-       uses: sonarsource/sonarqube-scan-action@master
-       with:
-         projectBaseDir: /home/runner/work/sp-frontend/sp-frontend/secprism
-       env:
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-       continue-on-error: true  # Continue even if SonarQube scan fails
+     - name: Scan GitHub Secrets
+       uses: kams-mash/gh-secrets-scanner-action@master
+       continue-on-error: true  # This ensures the job continues even if this step fails
